@@ -2,6 +2,9 @@
 StageScene::control+18:
     BL stageSceneHook
 
+//1DB5CC: // BootLayout::appear+C
+//    BL bootLayoutHook
+
 // overwrites some move instructions with hook code, which reimplements the move instructions at the end of the code
 5359DC: // GameSystem::init+18C
     MOV X0, X19 // move GameSystem to arg register

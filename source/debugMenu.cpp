@@ -58,6 +58,9 @@ void setupDebugMenu(GameSystem *gSys) {
     __asm("MOV W8, #0xFFFFFFFF");
 }
 
+extern int returnValueFuckYeah;
+extern int state;
+
 void drawBackground(agl::DrawContext *context) {
 
     sead::Vector3<float> p1; // top left
@@ -130,11 +133,12 @@ void drawMainHook(HakoniwaSequence *curSequence, sead::Viewport *viewport, sead:
 
         gTextWriter->setScaleFromFontHeight(20.f);
 
-        gTextWriter->printf("Mario Pos:\nX: %f\nY: %f\nZ: %f\n", playerTrans->x, playerTrans->y, playerTrans->z);
-        gTextWriter->printf("Mario Velocity:\nX: %f\nY: %f\nZ: %f\n", playerVel->x, playerVel->y, playerVel->z);
-        gTextWriter->printf("Mario Rotation:\nX: %f\nY: %f\nZ: %f\n", playerRot.x, playerRot.y, playerRot.z);
-        gTextWriter->printf("Horizontal Speed: %f\n", al::calcSpeedH(player));
-        gTextWriter->printf("Recovery Point Location:\nX: %f\nY: %f\nZ: %f\n", playerRecoveryPoint->x,playerRecoveryPoint->y, playerRecoveryPoint->z);
+        gTextWriter->printf("Return Value: %d\nState: %d\n", returnValueFuckYeah, state);
+//        gTextWriter->printf("Mario Pos:\nX: %f\nY: %f\nZ: %f\n", playerTrans->x, playerTrans->y, playerTrans->z);
+//        gTextWriter->printf("Mario Velocity:\nX: %f\nY: %f\nZ: %f\n", playerVel->x, playerVel->y, playerVel->z);
+//        gTextWriter->printf("Mario Rotation:\nX: %f\nY: %f\nZ: %f\n", playerRot.x, playerRot.y, playerRot.z);
+//        gTextWriter->printf("Horizontal Speed: %f\n", al::calcSpeedH(player));
+//        gTextWriter->printf("Recovery Point Location:\nX: %f\nY: %f\nZ: %f\n", playerRecoveryPoint->x,playerRecoveryPoint->y, playerRecoveryPoint->z);
 
         isInGame = false;
     }
